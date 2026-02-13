@@ -40,6 +40,10 @@
     </style>
 </head>
 <body>
+    <audio id="valentineSong" preload="auto">
+  <source src="https://raw.githubusercontent.com/CreativeThinking123/satish/main/Nuvvunte%20Chaley%20Video%20Song%20Out%20Now%20%20ATK%20%20Ram%20Pothineni%20%20Upendra%20%20Bhagyashri%20Borse%20%20MaheshBabu%20P%20-%20Mythri%20Movie%20Makers.mp3" type="audio/mp3">
+</audio>
+
     <canvas id="star-canvas"></canvas>
     <audio id="roseMusic" src="voice.mp3" preload="auto"></audio>
     <audio id="chocoMusic" src="choco.mp3" preload="auto"></audio>
@@ -253,6 +257,16 @@ if (item.n === "Propose Day") {
         }
         window.addEventListener('resize', initStars);
         initStars(); animStars(); runBoot();
+        // 🎵 Play song ONLY on Feb 14
+window.addEventListener("click", () => {
+  const today = new Date();
+  const isFeb14 = (today.getMonth() === 1 && today.getDate() === 14);
+
+  if(isFeb14){
+    const song = document.getElementById("valentineSong");
+    if(song) song.play().catch(()=>{});
+  }
+}, { once:true });
     </script>
 </body>
 </html>
